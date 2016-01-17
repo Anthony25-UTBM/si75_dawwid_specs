@@ -14,6 +14,7 @@
 \usepackage{titletoc}
 \usepackage{fullpage}
 \usepackage{multirow}
+\usepackage{url}
 
 \titleformat{\chapter}[hang]{\bf\huge}{}{2pc}{}
 
@@ -62,63 +63,56 @@ L'application doit être capable de :
     \item communiquer avec l'utilisateur via la synthèse vocale;
 \end{itemize}
 
+    \section{Contexte}
 
-    \section{Grandes étapes et calendrier}
+Ce projet a été pensé pour permettre l'utilisation de systèmes informatiques 
+sans nécessiter toute l'attention de l'utilisateur. En effet, il est de plus en
+plus courant d'utiliser un ordinateur pour des tâches secondaires dans un
+milieu domestique.
 
-\begin{center}
-{
-\let\oldtabular=\tabular
-\def\tabular{\normalsize\oldtabular}
-\renewcommand{\arraystretch}{1.5}
-\begin{tabular}{|l|c|}
-	\hline
-    18/10/2013 & MCD terminé.\\
-	\hline
-    28/10/2013 & Début du développement.\\
-    \hline
-    Novembre 2013 & Interface réalisée, base de donnée crée.\\
-    \hline
-    \multirow{2}{*}{Décembre 2013} & Site fonctionnel, design proche du rendu final, début de la phase de \\
-    & corrections de bugs.\\
-    \hline
-	07/01/2014 & Finalisation du développement.\\
-	\hline
-\end{tabular}
-}
-\end{center}
+\paragraph{}
+Un cas typique d'utilisation de Dawwyd et l'écoute de musique
+en accompagnement du nettoyage de la vaisselle : l'utilisateur peut avoir
+besoin d'interagir avec son ordinateur pour des tâches simples liées à l'écoute
+de musique (augmenter le volume, changer de musique).
+Dawwyd permet alors à l'utilisateur d'effectuer ces actions sans avoir à
+interrompre son activité principale, grâce à une simple commande vocale.
 
+    \section{Équipe}
 
-	\section{Budget}
+\begin{description}
+    \item[Anthony RUHIER] \hfill \\
+    \item[Benoit HOUDAYER] \hfill \\
 
-Aucun budget n'est à prévoir : le présent projet ne fait pas l'objet de compensation financière et les outils permettant sa conception sont déjà disponibles à titre gratuit.
+\end{description}
 
-    \section{Modèle conceptuel de données}
+    \section{Contraintes}
 
+Le projet est planifié sur une durée relativement courte : la livraison
+est prévue pour le 5 février 2016, laissant 3 semaines pour le conception et la
+réalisation du projet. La réussite du projet sera déterminée par notre capacité
+à comprendre et utiliser la solution de reconnaissance vocale
+Jasper\footnote{\url{https://jasperproject.github.io}}.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=16.5cm]{images/MCD.jpg}
-    \caption{Modèle conceptuel de données}
-\end{figure}
-\newpage
+    \section{Exigences}
 
-    \section{Arbre des fonctionnalités}
+    \begin{tabular}{|l|l|c|}
+        \hline
+        fonctionnalité & description & marge d'erreur \\
+        \hline
+        transcription de la voix & L'application doit être capable de transcrire
+        les paroles de l'utilisateur vers du texte pour pouvoir interpréter la
+        commande & 60\% de reconnaissance correcte \\
+        interprétation correcte de la commande & Après transcription, une
+        commande doit être interprétée pour déclencher une action. &
+        choix d'une action en 3 secondes ou moins \\
+        \hline
+    \end{tabular}
 
+    \section{Livrables}
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=16.5cm]{images/DHM.png}
-    \caption{Arbre des fonctionnalités}
-\end{figure}
-\newpage
-
-    \section{Tracé régulateur}
+    \section{Planning}
 
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=16.5cm]{images/Trace-regulateur.png}
-    \caption{Tracé régulateur}
-\end{figure}
 
 \end{document}
