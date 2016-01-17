@@ -14,7 +14,18 @@
 \usepackage{titletoc}
 \usepackage{fullpage}
 \usepackage{multirow}
-\usepackage{url}
+\usepackage{hyperref}
+
+% Enlève les contours des liens
+\hypersetup{
+    linkbordercolor={1 1 1},
+    citebordercolor={1 1 1},
+    urlbordercolor={1 1 1},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
 \titleformat{\chapter}[hang]{\bf\huge}{}{2pc}{}
 
@@ -24,18 +35,20 @@
 \begin{titlepage}
 \begin{center}
 
-\textsc{\LARGE IUT Belfort Montbéliard}\\[4cm]
+\textsc{\large Université de Technologie de Belfort Montbéliard}\\[4cm]
 
 % Title
-{ \huge \bfseries Projet de Base de Données :\\[0.3em] Gestion d'une boulangerie\\[1em]Cahier des charges}\\[4cm]
+{ \huge \bfseries Logiciel de Commande Vocale\\[0.3em] Dawwyd\\[1em]Cahier des charges}\\[4cm]
 
 % Author and supervisor
 {
 \begin{large}
 \setlength{\baselineskip}{1.6\baselineskip}
-\emph{Étudiants en charge du projet: \\[0.5em]}
-\textsc{Houdayer} Benoit\\
-\textsc{Ruhier} Anthony\\[2em]
+
+\vspace{5cm}
+18 janvier 2016\\[2em]
+Benoit \textsc{Houdayer}\\
+Anthony \textsc{Ruhier}\\[2em]
 
 \end{large}
 }
