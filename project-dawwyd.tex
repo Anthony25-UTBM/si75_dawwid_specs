@@ -94,22 +94,47 @@ réalisation du projet. La réussite du projet sera déterminée par notre capac
 à comprendre et utiliser la solution de reconnaissance vocale
 Jasper\footnote{\url{https://jasperproject.github.io}}.
 
+\paragraph{}
+L'architecture du projet devra être modulaire pour pouvoir être intégré
+facilement avec les autres applications. La reconnaissance vocale sera au
+cœur du projet, tandis que les interactions avec les applications externes
+seront implémentées sous forme de modules.
+
+\paragraph{}
+Comme la solution de reconnaissance vocale Jasper est codée grâce au langage
+Python, nous utiliseront ce langage pour l'ensemble de l'application.
+
     \section{Exigences}
 
-    \begin{tabular}{|l|l|c|}
-        \hline
-        fonctionnalité & description & marge d'erreur \\
-        \hline
-        transcription de la voix & L'application doit être capable de transcrire
-        les paroles de l'utilisateur vers du texte pour pouvoir interpréter la
-        commande & 60\% de reconnaissance correcte \\
-        interprétation correcte de la commande & Après transcription, une
-        commande doit être interprétée pour déclencher une action. &
-        choix d'une action en 3 secondes ou moins \\
-        \hline
-    \end{tabular}
+    \begin{description}
+        \item[transcription de la voix] \hfill \\
+        L'application doit être capable de transcrire
+        les paroles de l'utilisateur pour pouvoir interpréter la
+        commande \\
+        - 60\% de reconnaissance correcte
+
+        \item[interprétation correcte de la commande] \hfill \\
+        Après transcription, une
+        commande doit être interprétée pour déclencher une action. \\
+        - choix d'une action en 3 secondes ou moins 
+
+        \item[intégration avec le lecteur audio]
+        L'intégration avec le lecteur audio devra comprendre au moins les fonctionnalités : \\
+        - piste suivante/précédente \\
+        - play/pause \\
+        - augmenter/diminuer le volume \\
+
+    \end{description}
 
     \section{Livrables}
+
+    Le livrable de l'application comprendra :
+
+    \begin{itemize}
+        \item Les exécutables de l'application sous forme de fichiers python '.py'.
+        \item Un fichier 'README' contenant les instructions pour l'installation et 
+            l'utilisation de l'application, au format markdown '.md'.
+    \end{itemize}
 
     \section{Planning}
 
