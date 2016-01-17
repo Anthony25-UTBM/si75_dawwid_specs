@@ -5,15 +5,14 @@
 \usepackage[francais]{babel}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{stmaryrd}
-\usepackage{listings}
 \usepackage{color}
-\usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{titlesec}
-\usepackage{titletoc}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
 \usepackage{fullpage}
-\usepackage{multirow}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
 \usepackage{hyperref}
 
 % Enlève les contours des liens
@@ -27,36 +26,30 @@
 }
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
-\titleformat{\chapter}[hang]{\bf\huge}{}{2pc}{}
+
+\title{\textbf{SI75 -- Logiciel de commande vocale Dawwyd\\[0.5em]Cahier des charges}}
+
+\author{Benoit HOUDAYER \\ \href{mailto:benoit.houdayer@utbm.fr}{benoit.houdayer@utbm.fr}
+\and Anthony RUHIER \\ \href{mailto:anthony.ruhier@utbm.fr}{anthony.ruhier@utbm.fr}}
+
+\date{18 janvier 2016}
+
+\pagestyle{fancy}
+\setlength{\headheight}{12pt}
+\fancyhf{}
+\fancyhead[L]{Benoit HOUDAYER, Anthony RUHIER}
+\fancyhead[R]{Dawwyd -- Cahier des charges}
+\geometry{headsep=5ex}
 
 
 \begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \vspace{4em}
+    \tableofcontents
 
-\begin{titlepage}
-\begin{center}
-
-\textsc{\large Université de Technologie de Belfort Montbéliard}\\[4cm]
-
-% Title
-{ \huge \bfseries Logiciel de Commande Vocale\\[0.3em] Dawwyd\\[1em]Cahier des charges}\\[4cm]
-
-% Author and supervisor
-{
-\begin{large}
-\setlength{\baselineskip}{1.6\baselineskip}
-
-\vspace{5cm}
-18 janvier 2016\\[2em]
-Benoit \textsc{Houdayer}\\
-Anthony \textsc{Ruhier}\\[2em]
-
-\end{large}
-}
-
-\vfill
-
-\end{center}
-\end{titlepage}
+    \afterpage{\cfoot{\thepage}}
+    \newpage
 
 
 	\section{Objectifs}
