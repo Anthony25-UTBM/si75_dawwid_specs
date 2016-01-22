@@ -88,6 +88,8 @@
     commande
     \begin{itemize}
         \item 60\% de reconnaissance correcte
+        \item Consommation mémoire réduite pour pouvoir cibler des appareils
+            dans le domaine de l'embarqué.
     \end{itemize}
 
     \subsection{Analyse sémantique}
@@ -95,9 +97,11 @@
     action.
     \begin{itemize}
         \item choix d'une action en 3 secondes ou moins
+        \item Modulaire
     \end{itemize}
 
     \subsection{Intégration avec les applications de l'utilisateur}
+    \paragraph{}
     Les actions à effectuer par Dawwyd auprès des applications de l'utilisateur
     sont matérialisée par des modules. De cette façon, il est possible
     d'intégrer plus facilement de nouvelles fonctionnalités.
@@ -107,6 +111,12 @@
     mais enrichissent considérablement l'expérience de l'utilisateur. Pour
     cette raison, la quantité de modules implémentés dépendra de la rapidité
     de l'avancement du projet.
+
+    \paragraph{}
+    Au démarrage, Dawwyd devra découvrir le parc applicatif installé de façon à
+    ne charger que les modules qui seront utilisables par l'utilisateur. Il est
+    inutile de charger un module gérant une application qui n'est pas présente.
+
 
     \subsubsection{Lecteur de musique}
     L'intégration à pour but de couvrir les fonctionnalités pour une utilisation
@@ -121,31 +131,51 @@
         \item augmenter/diminuer le volume
     \end{itemize}
 
+    \paragraph{}
+    Les contraintes associées sont alors :
+    \begin{itemize}
+        \item les probabilités de succès de la reconnaissance vocale devront
+            tenir les 60\% annoncés plus haut, malgré le bruit ambiant dégagé
+            par la musique.
+    \end{itemize}
+
     \subsubsection{Navigateur internet}
-    Cette intégration permettra de demander l'ouverture du navigateur sur une page
-    précise.
+    Cette intégration permettra de demander l'ouverture du navigateur sur une
+    page précise.
 
     \begin{itemize}
         \item la page à ouvrir est précisée dans la commande par l'utilisateur
     \end{itemize}
 
+    \paragraph{}
+    Ce qui conduit à fixer les contraintes suivantes:
+    \begin{itemize}
+        \item l'url (l'adresse complète du site à atteindre) ne devra pas être
+            dictée entièrement par l'utilisateur, mais fonctionnera par alias.
+        \item ouvrir un onglet sur le navigateur par défaut
+    \end{itemize}
+
     \subsubsection{Météo}
-    Dawwyd récupère les informations sur la météo et les énonce à l'utilisateur.
+    \paragraph{}
+    Dawwyd récupère les informations sur la météo et les énonce à
+    l'utilisateur.
 
     \begin{itemize}
-        \item Dawwyd récupère les informations sur la ville de résidence de l'utilisateur
-        \item les informations sont énoncées de manière concise et compréhensible
+        \item Dawwyd récupère les informations sur la ville de résidence de
+            l'utilisateur
+        \item les informations sont énoncées de manière concise et
+            compréhensible
     \end{itemize}
 
     \subsubsection{Actualités}
+    \paragraph{}
     Dawwyd récupère les titres de l'actualité et les énonce à l'utilisateur.
 
     \begin{itemize}
         \item les titres sont lus dans l'ordre chronologique à l'utilisateur
-        \item les informations sont énoncées de manière concise et compréhensible
+        \item les informations sont énoncées de manière concise et
+            compréhensible
     \end{itemize}
-
-    \section{Contraintes}
 
 
 \end{document}
