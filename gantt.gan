@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-01-14" view-index="0" gantt-divider-location="408" resource-divider-location="300" version="2.7.1" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-01-05" view-index="0" gantt-divider-location="408" resource-divider-location="300" version="2.7.1" locale="fr">
     <description/>
-    <view zooming-state="default:3" id="gantt-chart">
+    <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="53" order="0"/>
         <field id="tpd4" name="Date de début" width="23" order="1"/>
         <field id="tpd5" name="Date de fin" width="22" order="2"/>
@@ -33,10 +33,22 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="conception fonctionnelle" color="#ff9900" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2016-01-18" duration="3" complete="0" expand="true"/>
-        <task id="1" name="conception technique" meeting="false" start="2016-01-18" duration="7" complete="0" expand="true"/>
-        <task id="2" name="développement de l'application" meeting="false" start="2016-01-21" duration="7" complete="0" expand="true"/>
-        <task id="3" name="test/recette" meeting="false" start="2016-02-01" duration="5" complete="0" expand="true"/>
+        <task id="0" name="Conception fonctionnelle" color="#ff9900" shape="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" meeting="false" start="2016-01-18" duration="3" complete="0" expand="true"/>
+        <task id="1" name="Conception technique" color="#000000" meeting="false" start="2016-01-22" duration="1" complete="0" expand="true">
+            <task id="7" name="Étude de Jasper" color="#8cb6ce" meeting="false" start="2016-01-22" duration="1" complete="0" expand="true"/>
+            <task id="8" name="Étude des différents moteurs de transcription" color="#8cb6ce" meeting="false" start="2016-01-22" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="2" name="Développement de l'application" color="#000000" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true">
+            <task id="4" name="Transcription" color="#8cb6ce" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+            <task id="6" name="Analyse sémantique" color="#8cb6ce" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+            <task id="17" name="Intégration dans les applications" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true">
+                <task id="18" name="Lecteur de musique" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+                <task id="20" name="Navigateur internet" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+                <task id="21" name="Météo" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+                <task id="22" name="Actualités" meeting="false" start="2016-01-25" duration="5" complete="0" expand="true"/>
+            </task>
+        </task>
+        <task id="3" name="Test/Recette" meeting="false" start="2016-02-01" duration="5" complete="0" expand="true"/>
     </tasks>
     <resources/>
     <allocations/>
