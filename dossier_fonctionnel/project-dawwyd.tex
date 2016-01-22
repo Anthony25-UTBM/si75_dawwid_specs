@@ -1,0 +1,151 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{color}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+% Enlève les contours des liens
+\hypersetup{
+    linkbordercolor={1 1 1},
+    citebordercolor={1 1 1},
+    urlbordercolor={1 1 1},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+
+\title{\textbf{SI75 -- Logiciel de Commande Vocale Dawwyd\\[0.5em]Dossier Fonctionnel}}
+
+\author{Benoit HOUDAYER \\ \href{mailto:benoit.houdayer@utbm.fr}{benoit.houdayer@utbm.fr}
+\and Anthony RUHIER \\ \href{mailto:anthony.ruhier@utbm.fr}{anthony.ruhier@utbm.fr}}
+
+\date{21 janvier 2016}
+
+\pagestyle{fancy}
+\setlength{\headheight}{12pt}
+\fancyhf{}
+\fancyhead[L]{Benoit HOUDAYER, Anthony RUHIER}
+\fancyhead[R]{Dawwyd -- Dossier Fonctionnel}
+\geometry{headsep=5ex}
+
+\def\ctabular{}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \tableofcontents
+    \listoffigures
+
+    \section*{Historique des modifications}
+
+    \begin{table}
+    \centering
+
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        version & date & auteur & modification \\
+        \hline
+        0.1 & 21 janvier 2016 & BHD & création du document \\
+        0.2 & 21 janvier 2016 & ARH & ajout du planing détaillé \\
+        \hline
+    \end{tabular}
+    \end{table}
+
+    \afterpage{\cfoot{\thepage}}
+    \newpage
+
+    \section{Fonctionnalités}
+    Dawwyd peut être décrit comme étant composé de 3 fonctions principales :
+    \begin{description}
+        \item[la transcription] est la fonction permettant de tranformer la voix
+            de l'utilisateur sous forme de texte, analysable par l'application.
+        \item[l'analyse sémantique] est la compréhension du sens de la phrase
+            de l'utilisateur menant à la prise de décision sur
+            l'action à effectuer.
+        \item[l'intégration avec les application de l'utilisateur] est constituée
+            de l'ensemble des modules interagissant avec les applications,
+            et fournissant chacun une ou plusieurs actions.
+    \end{itemize}
+
+    \subsection{Transcription}
+    L'application doit être capable de transcrire
+    les paroles de l'utilisateur pour pouvoir interpréter la
+    commande
+    \begin{itemize}
+        \item 60\% de reconnaissance correcte
+    \end{itemize}
+
+    \subsection{Analyse sémantique}
+    Après transcription, une commande doit être interprétée pour déclencher une
+    action.
+    \begin{itemize}
+        \item choix d'une action en 3 secondes ou moins
+    \end{itemize}
+
+    \subsection{Intégration avec les applications de l'utilisateur}
+    Les actions à effectuer par Dawwyd auprès des applications de l'utilisateur
+    sont matérialisée par des modules. De cette façon, il est possible
+    d'intégrer plus facilement de nouvelles fonctionnalités.
+    
+    \paragraph{}
+    Les modules ne sont pas critiques pour le fonctionnement de l'application
+    mais enrichissent considérablement l'expérience de l'utilisateur. Pour
+    cette raison, la quantité de modules implémentés dépendra de la rapidité
+    de l'avancement du projet.
+
+    \subsubsection{Lecteur de musique}
+    L'intégration à pour but de couvrir les fonctionnalités pour une utilisation
+    basique du lecteur; le but étant de permettre la navigation dans un album
+    une fois la lecture lancée manuellement par l'utilisateur.
+    
+    \paragraph{}
+    Ainsi, les fonctions implémentées seront :
+    \begin{itemize}
+        \item piste suivante/précédente
+        \item lecture/pause
+        \item augmenter/diminuer le volume
+    \end{itemize}
+    
+    \subsubsection{Navigateur internet}
+    Cette intégration permettra de demander l'ouverture du navigateur sur une page
+    précise.
+
+    \begin{itemize}
+        \item la page à ouvrir est précisée dans la commande par l'utilisateur
+    \end{itemize}
+
+    \subsubsection{Météo}
+    Dawwyd récupère les informations sur la météo et les énonce à l'utilisateur.
+
+    \begin{itemize}
+        \item Dawwyd récupère les informations sur la ville de résidence de l'utilisateur
+        \item les informations sont énoncées de manière concise et compréhensible
+    \end{itemize}
+
+    \subsubsection{Actualités}
+    Dawwyd récupère les titres de l'actualité et les énonce à l'utilisateur.
+
+    \begin{itemize}
+        \item les titres sont lus dans l'ordre chronologique à l'utilisateur
+        \item les informations sont énoncées de manière concise et compréhensible
+    \end{itemize}
+
+    \section{Contraintes}
+    
+
+\end{document}
