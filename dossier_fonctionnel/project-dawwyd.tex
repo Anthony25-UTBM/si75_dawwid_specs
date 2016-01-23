@@ -28,7 +28,7 @@
 }
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
-\title{\vspace{-1cm}\textbf{SI75 -- Logiciel de Commande Vocale \includegraphics[width=4cm]{logo.jpg}\\[0.5em]Dossier Fonctionnel}}
+\title{\vspace{-1cm}\textbf{SI75 -- Logiciel de Commande Vocale \vspace{0.5cm \includegraphics[width=4cm]{logo.jpg}\\[0.5em]Dossier Fonctionnel}}}
 
 \author{Benoit HOUDAYER \\ \href{mailto:benoit.houdayer@utbm.fr}{benoit.houdayer@utbm.fr}
 \and Anthony RUHIER \\ \href{mailto:anthony.ruhier@utbm.fr}{anthony.ruhier@utbm.fr}}
@@ -69,16 +69,15 @@
     \newpage
 
     \section{Fonctionnalités}
-    Dawwyd peut être décrit comme étant composé de 3 fonctions principales :
+    Dawwyd est composé de 3 fonctions principales :
     \begin{description}
-        \item[la transcription] est la fonction permettant de tranformer la voix
-            de l'utilisateur sous forme de texte, analysable par l'application.
-        \item[l'analyse sémantique] est la compréhension du sens de la phrase
-            de l'utilisateur menant à la prise de décision sur
-            l'action à effectuer.
-        \item[l'intégration avec les application de l'utilisateur] est constituée
-            de l'ensemble des modules interagissant avec les applications,
-            et fournissant chacun une ou plusieurs actions.
+        \item[la transcription] est la fonction transformant la voix
+            de l'utilisateur en texte, analysable par l'application.
+        \item[l'analyse sémantique] est la compréhension du sens de la phrase,
+            permettant la prise de décision sur l'action à effectuer.
+        \item[l'intégration avec les application de l'utilisateur] réalisée
+            grâce à un ensemble de modules, interagissant avec les applications.
+            Chaque module implémente une ou plusieurs actions.
     \end{description}
 
     \subsection{Transcription}
@@ -87,16 +86,14 @@
     commande
     \begin{itemize}
         \item 60\% de reconnaissance correcte
-        \item Consommation mémoire réduite pour pouvoir cibler des appareils
-            dans le domaine de l'embarqué.
+        \item Possibilité d'effectuer la transcription sur du matériel embarqué
     \end{itemize}
 
     \subsection{Analyse sémantique}
     Après transcription, une commande doit être interprétée pour déclencher une
     action.
     \begin{itemize}
-        \item choix d'une action en 3 secondes ou moins
-        \item Modulaire
+        \item Choix d'une action en 3 secondes ou moins
     \end{itemize}
 
     \subsection{Intégration avec les applications de l'utilisateur}
@@ -107,15 +104,14 @@
 
     \paragraph{}
     Les modules ne sont pas critiques pour le fonctionnement de l'application
-    mais enrichissent considérablement l'expérience de l'utilisateur. Pour
+    mais enrichissent simplement l'expérience utilisateur. Pour
     cette raison, la quantité de modules implémentés dépendra de la rapidité
     de l'avancement du projet.
 
     \paragraph{}
-    Au démarrage, Dawwyd devra découvrir le parc applicatif installé de façon à
+    Au démarrage, Dawwyd devra découvrir les applications installées de façon à
     ne charger que les modules qui seront utilisables par l'utilisateur. Il est
-    inutile de charger un module gérant une application qui n'est pas présente.
-
+    inutile de charger un module gérant une application absente.
 
     \subsubsection{Lecteur de musique}
     L'intégration à pour but de couvrir les fonctionnalités pour une utilisation
@@ -131,7 +127,7 @@
     \end{itemize}
 
     \paragraph{}
-    Les contraintes associées sont alors :
+    Les contraintes associées sont :
     \begin{itemize}
         \item les probabilités de succès de la reconnaissance vocale devront
             tenir les 60\% annoncés plus haut, malgré le bruit ambiant dégagé
@@ -143,7 +139,7 @@
     page précise.
 
     \begin{itemize}
-        \item la page à ouvrir est précisée dans la commande par l'utilisateur
+        \item la page à ouvrir est précisée dans la commande vocale de l'utilisateur
     \end{itemize}
 
     \paragraph{}
@@ -156,7 +152,7 @@
 
     \subsubsection{Météo}
     \paragraph{}
-    Dawwyd récupère les informations sur la météo et les énonce à
+    Ce module récupère les informations sur la météo et les énonce à
     l'utilisateur.
 
     \begin{itemize}
@@ -172,14 +168,13 @@
 
     \begin{itemize}
         \item les titres sont lus dans l'ordre chronologique à l'utilisateur
-        \item les informations sont énoncées de manière concise et
             compréhensible
     \end{itemize}
 
 
     \section{Enchainement des activités}
 
-    Dawwyd ne possède pas d'interface graphique, ses intéractions avec
+    Dawwyd ne possède pas d'interface graphique, ses interactions avec
     l'utilisateur se font uniquement sous forme de réponses sonores
     ou éventuellement de notifications discrètes.
 
@@ -203,9 +198,8 @@
         \item Une notification est envoyée à l'utilisateur pour lui signaler
             que l'écoute à démarré. L'enregistrement d'un message provoque
             l'étape suivante.
-        \item L'enregistrement de la voix de l'utilisateur est passé a Jasper
-            pour la transcription.
-        \item L'analyse sémantique est effectuée et le choix de l'action a effectuer
+        \item L'enregistrement de la voix de l'utilisateur est transcrit.
+        \item L'analyse sémantique est effectuée et le choix de l'action à effectuer
             est pris dans le temps imparti.
         \item Si aucune action ne correspond à la commande de l'utilisateur,
             Dawwyd signale l'erreur via une notification ou un signal sonore
