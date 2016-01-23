@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{float}
 
 % Enlève les contours des liens
 \hypersetup{
@@ -27,13 +28,12 @@
 }
 \PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
 
-
-\title{\textbf{SI75 -- Logiciel de Commande Vocale Dawwyd\\[0.5em]Dossier Fonctionnel}}
+\title{\vspace{-1cm}\textbf{SI75 -- Logiciel de Commande Vocale \includegraphics[width=4cm]{logo.jpg}\\[0.5em]Dossier Fonctionnel}}
 
 \author{Benoit HOUDAYER \\ \href{mailto:benoit.houdayer@utbm.fr}{benoit.houdayer@utbm.fr}
 \and Anthony RUHIER \\ \href{mailto:anthony.ruhier@utbm.fr}{anthony.ruhier@utbm.fr}}
 
-\date{21 janvier 2016}
+\date{23 janvier 2016}
 
 \pagestyle{fancy}
 \setlength{\headheight}{12pt}
@@ -42,8 +42,7 @@
 \fancyhead[R]{Dawwyd -- Dossier Fonctionnel}
 \geometry{headsep=5ex}
 
-\def\ctabular{}
-
+\graphicspath{{images/}}
 
 \begin{document}
     \maketitle
@@ -53,7 +52,7 @@
 
     \section*{Historique des modifications}
 
-    \begin{table}
+    \begin{table}[H]
     \centering
 
     \begin{tabular}{|l|l|l|l|}
@@ -61,7 +60,7 @@
         version & date & auteur & modification \\
         \hline
         0.1 & 21 janvier 2016 & BHD & création du document \\
-        0.2 & 21 janvier 2016 & ARH & ajout du planing détaillé \\
+        0.2 & 23 janvier 2016 & ARH & ajout du planing détaillé \\
         \hline
     \end{tabular}
     \end{table}
@@ -177,5 +176,52 @@
             compréhensible
     \end{itemize}
 
+
+    \section{Enchainement des activités}
+
+    Dawwyd ne possède pas d'interface graphique, ses intéractions avec
+    l'utilisateur se font uniquement sous forme de réponses sonores
+    ou éventuellement de notifications discrètes.
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=15cm]{diagramme_flux.eps}
+        \caption{Flux des activités}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics[height=1cm]{exemple_notif.png}
+        \caption{Exemple de notification}
+    \end{figure}
+
+    \paragraph{}
+    Description des activités :
+    \begin{enumerate}
+        \item Dawwyd est démarré par l'utilisateur ou bien automatiquement par
+            le système.
+        \item Une notification est envoyée à l'utilisateur pour lui signaler
+            que l'écoute à démarré. L'enregistrement d'un message provoque
+            l'étape suivante.
+        \item L'enregistrement de la voix de l'utilisateur est passé a Jasper
+            pour la transcription.
+        \item L'analyse sémantique est effectuée et le choix de l'action a effectuer
+            est pris dans le temps imparti.
+        \item Si aucune action ne correspond à la commande de l'utilisateur,
+            Dawwyd signale l'erreur via une notification ou un signal sonore
+            puis retourne en phase d'écoute.
+        \item Si une action correspond à la commande de l'utilisateur, elle est
+            effectuée et Dawwyd retourne immédiatement en phase d'écoute.
+    \end{enumerate}
+
+
+
+    \section{Planing}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=6cm]{gantt.png}
+        \caption{Planing détaillé}
+    \end{figure}
 
 \end{document}
