@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{color}
+\usepackage{stmaryrd}
+\usepackage{fancyhdr}
+\usepackage{afterpage}
+\usepackage{fullpage}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage[labelformat=empty]{caption}
+
+% Enlève les contours des liens
+\hypersetup{
+    linkbordercolor={1 1 1},
+    citebordercolor={1 1 1},
+    urlbordercolor={1 1 1},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=blue
+}
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+\pagestyle{fancy}
+\setlength{\headheight}{12pt}
+\fancyhf{}
+\fancyhead[L]{Benoit HOUDAYER, Anthony RUHIER}
+\fancyhead[R]{Dawwyd -- Dossier Fonctionnel}
+\geometry{headsep=5ex}
+
+\graphicspath{{images/}}
+
+
+\title{\vspace{-1cm}\textbf{%
+    SI75 -- Logiciel de Commande Vocale \vspace{0.5cm}
+    \protect\includegraphics[width=4cm]{logo.jpg}\\[0.5em]
+    Dossier Technique}}
+
+\author{Benoit HOUDAYER \\ \href{mailto:benoit.houdayer@utbm.fr}{benoit.houdayer@utbm.fr}
+\and Anthony RUHIER \\ \href{mailto:anthony.ruhier@utbm.fr}{anthony.ruhier@utbm.fr}}
+
+\date{23 janvier 2016}
+\postauthor{\end{tabular}\vspace{0.6cm} \par Université de Technologie de Belfort-Montbéliard\end{center}}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \tableofcontents
+    \listoffigures
+
+    \section*{Historique des modifications}
+
+    \begin{table}[H]
+    \centering
+
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        version & date & auteur & modification \\
+        \hline
+        0.1 & 28 janvier 2016 & BHD & création du document \\
+        \hline
+    \end{tabular}
+    \end{table}
+
+    \afterpage{\cfoot{\thepage}}
+    \newpage
+
+    \section{Solutions Utilisées}
+	    \subsection{Système d'Exploitation}
+	    Dawwyd est prévu pour fonctionner dans un environnement Linux. Les raisons de ce choix sont :
+	    \begin{itemize}
+	    	\item L'expérience Linux de l'équipe de développement
+	    	\item La grande variété de machines supportant le système d'exploitation Linux
+	    \end{itemize}
+	    
+	    \paragraph{}
+	    Le support de plusieurs types de machines est un point important pour Dawwyd; comme il ne nécessite pas d'interface graphique, on peut envisager d'utiliser l'application aussi bien sur une station de travail classique (ordinateur de bureau ou portable) que sur un serveur domestique diffusant de la musique (par exemple, une instance de MPD\footnote{\url{http://www.musicpd.org/}} sur une architecture ARM ou Spotify sur X86)
+	    
+	    \subsection{Reconnaissance et Synthèse Vocale avec Jasper}
+	    Jasper\footnote{\url{https://jasperproject.github.io/}} est un framework facilitant la reconnaissance vocale (Speech To Text : STT) et la synthèse vocale (Text To Speech : TTS).
+	    
+	    \paragraph{}
+	    Le rôle de Jasper est de faciliter l'utilisation de moteurs de reconnaissance vocale divers, donnant plus de souplesse au projet. Les moteurs supportés et envisageables pour Dawwyd sont :
+	    
+	    \begin{description}
+	    	\item[PocketSphinx :] moteur open-source de reconnaissance vocale hors ligne. Idéalement, ce moteur est utilisé pour permettre l'utilisation de Dawwyd hors-ligne et préserver la vie privée de l'utilisateur.
+	    	\item[Google TTS :] moteur de reconnaissance vocale de Google. Il est plus précis que PocketSphinx mais nécessite une connexion internet pour fonctionner. En effet, la reconnaissance est effectuée par les serveurs de Google à partir d'un fichier audio qui leur est envoyé.
+	    	\item[Wit.ai :] comme pour Google TTS, ce moteur nécessite une connexion à internet. Il peut toutefois être une alternative intéressante.
+	    \end{description}
+	    
+	    \paragraph{}
+	    Jasper supporte également de nombreuses solutions de synthèse vocale. Le moteur de synthèse vocale n'est pas crucial au fonctionnement de l'application, aussi, nous testeront l'application avec le moteur espeak\footnote{\url{http://espeak.sourceforge.net/}} exclusivement.
+    
+        \subsection{Langage de Programmation}
+
+        Le langage de programmation retenu pour ce projet est Python.
+                \begin{wrapfigure}{R}{0cm}
+                	\centering
+                	\raisebox{0pt}[\dimexpr\height-2\baselineskip\relax]{\includegraphics[width=2cm]{logo-python}}
+                	\caption[Logo de Python]{}
+                \end{wrapfigure}
+        
+        \paragraph{}
+        Python est un langage de script qui permet une très grande souplesse et offre des facilités de développement. C'est un langage très répandu sur les OS de type Linux, supportant une variété d'architectures.
+        
+        \paragraph{}
+	    Le choix du langage est motivé par sa souplesse et par le fait que Jasper propose une API dans ce langage.
+	    
+	\section{Implémentation}
+		Diagramme de séquence
+		
+
+\end{document}

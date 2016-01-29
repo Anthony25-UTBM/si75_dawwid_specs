@@ -1,0 +1,18 @@
+digraph "classes_test" {
+charset="utf-8"
+rankdir=BT
+"2" [label="{jasper.application.Jasper|audio\lbrain\lconfig : NoneType\lconversation\lmic\lplugins\l|list_audio_devices()\llist_plugins()\lrun()\l}", shape="record"];
+"8" [label="{jasper.brain.Brain|\l|add_plugin()\lget_all_phrases()\lget_plugin_phrases()\lget_plugins()\lget_standard_phrases()\lquery()\l}", shape="record"];
+"9" [label="{jasper.conversation.Conversation|brain\lmic\lprofile\ltranslations : dict\l|greet()\lhandleForever()\l}", shape="record"];
+"12" [label="{jasper.mic.Mic|active_stt_engine\lpassive_stt_engine\ltts_engine\l|active_listen()\lcheck_for_keyword()\llisten()\lplay_file()\lsay()\lspecial_mode()\lwait_for_keyword()\l}", shape="record"];
+"16" [label="{jasper.plugin.GenericPlugin|info\lprofile\l|}", shape="record"];
+"18" [label="{jasper.plugin.SpeechHandlerPlugin|\l|get_phrases()\lget_priority()\lhandle()\lis_valid()\l}", shape="record"];
+"22" [label="{jasper.pluginstore.PluginStore|\l|detect_plugins()\lget_plugin()\lget_plugins()\lget_plugins_by_category()\lparse_plugin()\l}", shape="record"];
+"18" -> "16" [arrowhead="empty", arrowtail="none"];
+"9" -> "2" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="conversation", style="solid"];
+"12" -> "2" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="mic", style="solid"];
+"22" -> "2" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="plugins", style="solid"];
+"8" -> "2" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="brain", style="solid"];
+"18" -> "2" [arrowhead="diamond", arrowtail="none", style="solid"];
+}
+
