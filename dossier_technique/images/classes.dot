@@ -6,7 +6,7 @@ rankdir=BT
 "9" [label="{jasper.conversation.Conversation|brain\lmic\lprofile\ltranslations : dict\l|greet()\lhandleForever()\l}", shape="record"];
 "12" [label="{jasper.mic.Mic|active_stt_engine\lpassive_stt_engine\ltts_engine\l|active_listen()\lcheck_for_keyword()\llisten()\lplay_file()\lsay()\lspecial_mode()\lwait_for_keyword()\l}", shape="record"];
 "16" [label="{jasper.plugin.GenericPlugin|info\lprofile\l|}", shape="record"];
-"18" [label="{jasper.plugin.SpeechHandlerPlugin|\l|get_phrases()\lget_priority()\lhandle()\lis_valid()\l}", shape="record"];
+"18" [label="{(A) jasper.plugin.SpeechHandlerPlugin|\l|get_phrases()\lget_priority()\lhandle()\lis_valid()\l}", shape="record"];
 "22" [label="{jasper.pluginstore.PluginStore|\l|detect_plugins()\lget_plugin()\lget_plugins()\lget_plugins_by_category()\lparse_plugin()\l}", shape="record"];
 "18" -> "16" [arrowhead="empty", arrowtail="none"];
 "9" -> "2" [arrowhead="diamond", arrowtail="none", fontcolor="green", label="conversation", style="solid"];
