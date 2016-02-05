@@ -37,7 +37,7 @@
 
 \setbeamertemplate{navigation symbols}{}
 
-\title{Dawwyd\\Reconnaissance Vocale}
+\title[Dawwyd]{Dawwyd\\Reconnaissance Vocale}
 
 \author[HOUDAYER \and RUHIER]{
 	Benoit HOUDAYER\\
@@ -93,109 +93,101 @@
 %%%% Includes des sections :
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-\section{le problème}
+\section{Répondre à un problème quotidien}
+
+\subsection{Types de tâches}
 \begin{frame}
-\frametitle{le problème}
-
-Tâches secondaires :
-
+\frametitle{Tâches secondaires}
 \begin{itemize}
-	\item écoute de musique
-	\item consultation des actualités/météo
-	\item réseaux sociaux
+	\item Écoute de musique
+	\item Consultation des actualités/météo
+	\item Réseaux sociaux
 \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{le problème}
-	
-	Tâches intrusives :
-	
-	\begin{itemize}
-		\item écoute de musique $\rightarrow$ ouvrir le lecteur
-		\item consultation des actualités/météo $\rightarrow$ ouvrir le navigateur
-		\item réseaux sociaux $\rightarrow$ lire les messages des gens
-	\end{itemize}
-	
+\frametitle{Tâches intrusives}
+\begin{itemize}
+    \item Écoute de musique $\rightarrow$ ouvrir le lecteur
+    \item Éonsultation des actualités/météo $\rightarrow$ ouvrir le navigateur
+    \item Ééseaux sociaux $\rightarrow$ lire les messages des gens
+\end{itemize}
+\end{frame}
+
+\subsection{Cas typique d'utilisation}
+\begin{frame}
+\frametitle{Solutionne de grandes frustrations quotidiennes}
+\begin{figure}
+    \caption{L'utilisateur écoute de la musique en nettoyant sa vaisselle}
+    \begin{tabular}{cc}
+    \includegraphics[height=6cm]{mains_mouillees} & \includegraphics[height=3.2cm]{laptop_music}
+    \end{tabular}
+\end{figure}
 \end{frame}
 
 \begin{frame}
-	
-	\frametitle{la solution}
-	
-	\begin{figure}
-		\caption{L'utilisateur écoute de la musique en faisant la vaisselle}
-		\begin{tabular}{cc}
-		\includegraphics[height=6cm]{mains_mouillees} & \includegraphics[height=3.2cm]{laptop_music}
-		\end{tabular}
-	\end{figure}
-	
+\begin{figure}
+    \caption{L'utilisateur demande à Dawwyd de changer la musique}
+    \placetextbox{0.4}{0.7}{"Musique suivante"}
+    \placetextbox{0.59}{0.3}{\Large$\rightarrow$}
+    \begin{tabular}{ccc}
+        \includegraphics[height=6cm]{mains_mouillees} & \includegraphics[height=3.2cm]{hal_dawwyd} & \includegraphics[height=3.2cm]{laptop_music}
+    \end{tabular}
+\end{figure}
 \end{frame}
 
 \begin{frame}
-	
-	\frametitle{la solution}
-	
-	\begin{figure}
-		\caption{L'utilisateur demande à Dawwyd de changer la musique}
-		\placetextbox{0.4}{0.7}{"Musique suivante"}
-		\placetextbox{0.59}{0.3}{\Large$\rightarrow$}
-		\begin{tabular}{ccc}
-			\includegraphics[height=6cm]{mains_mouillees} & \includegraphics[height=3.2cm]{hal_dawwyd} & \includegraphics[height=3.2cm]{laptop_music}
-		\end{tabular}
-	\end{figure}
-	
+\begin{figure}
+    \caption{Dawwyd a changé la musique}
+    \begin{tabular}{ccc}
+        \includegraphics[height=6cm]{mains_mouillees} & & \includegraphics[height=3.2cm]{laptop_music_2}
+    \end{tabular}
+\end{figure}
+
 \end{frame}
 
-\begin{frame}
-	
-	\frametitle{la solution}
-	
-	\begin{figure}
-		\caption{Dawwyd a changé la musique}
-		\begin{tabular}{ccc}
-			\includegraphics[height=6cm]{mains_mouillees} & & \includegraphics[height=3.2cm]{laptop_music_2}
-		\end{tabular}
-	\end{figure}
-	
-\end{frame}
-
-\section{l'implémentation}
-
+\section{Implémentation}
 \begin{frame}
 	\frametitle{Une solution adaptable}
-	
+
 	\begin{tabular}{p{2cm}p{6cm}}
 		\begin{figure}
 	\includegraphics[height=2cm]{python}\\
 	\includegraphics[height=2cm]{linux}\\
 	\includegraphics[height=2cm]{raspberry}
-	\end{figure} & 
-	
+	\end{figure} &
+
 	\vspace{3em}
 	\begin{itemize}
 		\setlength\itemsep{4em}
-		\item extensible
-		\item open-source
-		\item léger
+		\item Extensible
+		\item Open-source
+		\item Léger
 	\end{itemize}
-	
+
 	\end{tabular}
 \end{frame}
 
-\section{questions}
+\section{Améliorations possibles}
+
+\begin{frame}
+	\frametitle{Améliorations possibles}
+	\begin{itemize}
+		\setlength\itemsep{2em}
+		\item Faire profiter à Jasper des améliorations implémentées
+		\item Intégrer Dawwyd avec une part plus importante de logiciels
+		\item Proposer une API standard
+	\end{itemize}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Des questions ?}
-	
 	\centering
 	\begin{figure}
 	\includegraphics[height=5cm]{hal_dawwyd}
 	\caption{Dawwyd vous écoute}
 	\end{figure}
-	
-	
 \end{frame}
 
 \end{document}
