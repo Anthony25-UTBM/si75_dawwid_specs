@@ -1,0 +1,216 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{fix-cm}
+\usepackage{textpos}
+\usepackage{eurosym}
+\usepackage{multirow}
+\usepackage{perpage}
+\usepackage{eso-pic}
+
+\graphicspath{{images/}}
+
+\newcommand{\placetextbox}[3]{% \placetextbox{<horizontal pos>}{<vertical pos>}{<stuff>}
+	\setbox0=\hbox{#3}% Put <stuff> in a box
+	\AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+		\put(\LenToUnit{#1\paperwidth},\LenToUnit{#2\paperheight}){\vtop{{\null}\makebox[0pt][c]{#3}}}%
+	}%
+}%
+
+% Redéfinis les marges des tableaux
+\let\oldtabular=\tabular
+\def\tabular{\small\oldtabular}
+\renewcommand{\arraystretch}{1.5}
+
+\usetheme{Warsaw}
+\usecolortheme{orchid}
+
+% Permet de réinitialiser les footnote à chaque frame. Nécéssite 2 compilations.
+\MakePerPage{footnote}
+
+\setlength{\TPHorizModule}{0.01\textwidth}
+\setlength{\TPVertModule}{0.01\textheight}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title[Dawwyd]{Dawwyd\\Reconnaissance Vocale}
+
+\author[HOUDAYER \and RUHIER]{
+	Benoit HOUDAYER\\
+    \and
+	Anthony RUHIER
+}
+\institute[GE75 - UTBM]{
+    Gestion de Projet (SI75)\\Université de Technologie Belfort--Montbéliard}
+\date{Février 2016}
+
+\begin{document}
+
+% Permet de masquer le comptage de slides
+\bgroup
+\makeatletter
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+}
+\makeatother
+
+\begin{frame}[noframenumbering]
+ 	\frametitle{}
+	\titlepage
+	\hfill\includegraphics[height=1cm]{logo-utbm.eps}\hspace*{-1em}
+\end{frame}
+\egroup
+
+\logo{\includegraphics[height=1cm]{images/logo-utbm.eps}\hspace*{2em}}
+
+
+% Ajout du compteur de slides
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+      \insertshorttitle\hfill%
+      \insertframenumber\,/\,\inserttotalframenumber}
+
+\begin{frame}
+	\begin{small}
+	\frametitle{Plan}
+	\tableofcontents
+	\end{small}
+\end{frame}
+
+
+%%%% Includes des sections :
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\section{Répondre à un problème quotidien}
+
+\subsection{Types de tâches}
+\begin{frame}
+\frametitle{Tâches secondaires}
+\begin{itemize}
+    \setlength\itemsep{2em}
+	\item Écoute de musique
+	\item Consultation des actualités/météo
+	\item Réseaux sociaux
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Tâches intrusives}
+\begin{itemize}
+    \setlength\itemsep{2em}
+    \item Écoute de musique $\rightarrow$ ouvrir le lecteur
+    \item Éonsultation des actualités/météo $\rightarrow$ ouvrir le navigateur
+    \item Ééseaux sociaux $\rightarrow$ lire les messages des gens
+\end{itemize}
+\end{frame}
+
+\section{Planification}
+
+\subsection{WBS}
+\begin{frame}
+\begin{center}
+\begin{columns}
+\begin{column}{330px}
+{
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=300px]
+            {images/WBS}
+        \caption{WBS}
+    \end{figure}
+}
+\end{column}
+\end{columns}
+\end{center}
+\end{frame}
+
+
+\subsection{Cahier des charges}
+\begin{frame}
+\frametitle{Cahier des charges}
+\begin{itemize}
+    \setlength\itemsep{1.5em}
+    \item Synthétiser la voix de l'utilisateur sous forme de texte
+    \item Lien entre les données textuelles et fonctions implémentées
+    \item S'intégrer avec les applications de l'utilisateur
+    \item Intégration facile de nouvelles applications
+    \item Communiquer avec l'utiliser via la synthèse vocale
+\end{itemize}
+\end{frame}
+
+
+\subsection{Diagramme de PERT}
+{
+\logo{}
+\begin{frame}
+\begin{center}
+\begin{columns}
+\begin{column}{330px}
+{
+    \vspace{-0.5em}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[height=220px]
+            {images/pert}
+        \vspace{-1em}
+        \caption{PERT}
+    \end{figure}
+}
+\end{column}
+\end{columns}
+\end{center}
+\end{frame}
+}
+
+
+\section{Recettes et améliorations}
+
+\subsection{Recettes}
+\begin{frame}
+\frametitle{Recettes}
+\begin{itemize}
+    \setlength\itemsep{2em}
+    \item Toutes les fonctions prévues implémentées
+    \item Reconnaissance vocale, lecture du texte, gestion du français
+    \item Plugin de lecture de musique, météo, lancement d'applications
+    \item Pas de retard dans le planning
+\end{itemize}
+\end{frame}
+
+
+\subsection{Améliorations possibles}
+
+\begin{frame}
+\frametitle{Améliorations possibles}
+\begin{itemize}
+    \setlength\itemsep{2em}
+    \item Faire profiter à Jasper des améliorations implémentées
+    \item Intégrer Dawwyd avec une part plus importante de logiciels
+    \item Proposer une API standard
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Des questions ?}
+\centering
+\begin{figure}
+    \includegraphics[height=5cm]{hal_dawwyd}
+    \caption{Dawwyd vous écoute}
+\end{figure}
+\end{frame}
+
+\end{document}
